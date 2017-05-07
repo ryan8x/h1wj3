@@ -20,7 +20,7 @@ public class InventoryView implements Viewable {
 		super();
 		this.controller = controller;
 	}
-
+	@Override
 	public void start() {
 		controller.loadData();
 		boolean run = true;
@@ -225,12 +225,12 @@ public class InventoryView implements Viewable {
 		//Needed default return statement to avoid compiler error but will never get executed
 		return MediaCategory.CD;
 	}
-
+	@Override
 	public void setModel(Modellable model) {
 		this.model = model;
 		
 	}
-
+	@Override
 	public void update(UpdateType ut) {
 		if (ut == UpdateType.SEARCH_RESULT){
 			Media [] result = model.getSearchResult();
